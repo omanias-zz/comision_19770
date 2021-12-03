@@ -1,10 +1,110 @@
 JSX : Es una extension de JS que permite crear componentes de forma sencilla parecida a HTML
 
-COMPONENTES : Una funcion que siempre tiene retorno , ya que su funcion principal es dibujar un elemento en pantalla y todos arrancan en mayuscula
+COMPONENTES : Una funcion que siempre tiene un solo retorno , ya que su funcion principal es dibujar un elemento en pantalla y todos arrancan en mayuscula. 
 
 
-const Foo = () => {
+- Props : Son parametros de una funcion
+- State 
+- Ciclo de vida
+- Metodos de ciclo de vida
 
-    return ?
-    
+
+
+
+
+
+function foo(a){
+
+}
+
+
+
+
+foo(1)
+
+
+
+
+
+
+class App extends React.Component{
+
+    render(){
+        return (
+            <header>
+                {this.props.nombre}
+            </header>
+        )
+    }
+}
+
+
+const arr = [1,2,3,4,5]
+
+//[2,3,4,5,6]
+
+arr.map((elemento)=>{
+    return elemento + 1
+})
+
+
+warning
+
+
+comentarios
+
+
+
+
+
+
+const arr = [1,2,3]
+
+const [uno,dos,tres] = arr
+
+const uno = arr[0]
+const dos = arr[1]
+const tres = arr[2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const obj = {
+    a:1,
+    b:2,
+    c:3
+}
+
+const {a,b,c} = obj
+
+const {a:a,b:b,c:c} = obj
+
+const a = obj.a
+const b = obj.b
+const c = obj.c
+
+
+
+
+OBJECT PROPERTY SHORTHAND
+
+const nombre = 'Juan'
+
+const persona = {
+    nombre : nombre
+}
+
+const persona = {
+    nombre 
 }
