@@ -1,4 +1,7 @@
 import Header from "./Header"
+import ItemListContainer from "./ItemListContainer"
+import "./app.scss"
+
 
 function App () {
 
@@ -12,8 +15,9 @@ function App () {
 
     return (
         <>
-            <Header nombre={"Horacio"} edad={1} links={links}/>
+            <Header nombre={"Horacio"} edad={1} links={links} />
             <main>soy main</main>
+            <ItemListContainer/>
         </>
     )
 }
