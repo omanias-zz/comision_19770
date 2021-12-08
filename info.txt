@@ -4,9 +4,15 @@ COMPONENTES : Una funcion que siempre tiene un solo retorno , ya que su funcion 
 
 
 - Props : Son parametros de una funcion
-- State 
+- State : Son variables internas de un componente que si las modifico el componente se actualiza
 - Ciclo de vida
 - Metodos de ciclo de vida
+
+HOOKS : Son funciones .
+
+- useState : 
+
+        useState()
 
 
 
@@ -28,6 +34,15 @@ foo(1)
 
 
 class App extends React.Component{
+
+    constuctor(){
+        super()
+        this.state = {
+            usuarios : [],
+            contador : 0,
+            toggle : false
+        }
+    }
 
     render(){
         return (
