@@ -1,6 +1,7 @@
-import { useState , useEffect } from "react"
+import { useState, useEffect } from "react"
 import ItemCount from "./ItemCount"
 import ItemList from "./ItemList"
+import { useParams } from "react-router-dom"
 
 const productosIniciales = [
     { nombre: "Camisa", precio: 50 },
@@ -8,40 +9,46 @@ const productosIniciales = [
     { nombre: "Zapatos", precio: 150 }
 ]
 
+const ItemListContainer = ({ greeting }) => {
 
-const ItemListContainer = ({greeting}) => {
-
-    /* const [cantidad, setCantidad] = useState(0) */
     let [lista, setLista] = useState([])
+    const { id } = useParams()
 
-    useEffect(()=>{
+    
+    useEffect(() => {
+        /* if(id){
+            
+        }else{
 
-        const promesa = new Promise((res,rej)=>{
-            setTimeout(()=>{
+        } */
+        const promesa = new Promise((res, rej) => {
+            setTimeout(() => {
                 res(productosIniciales)
-            },2000)
+            }, 2000)
         })
-        
+
         promesa
-        .then((productos)=>{
-            console.log("Todo bien")
-            setLista(productos)
-        })
-        .catch(()=>{
-            console.log("Todo mal")
-        })
+            .then((productos) => {
+                console.log("Todo bien")
 
-    },[])
+                //if(id){
 
+                //}else{
+                setLista(productos)
+                //}
+            })
+            .catch(() => {
+                console.log("Todo mal")
+            })
 
-    /* */
+    }, [id])
+
+    
 
     return (
         <div>
-           <h2>{greeting}</h2>
-           {/* <p>Items seleccionados : {cantidad}</p> */}
-           {/*  */}
-           <ItemList lista={lista}/>
+            <h2>{greeting}</h2>
+            <ItemList lista={lista} />
         </div>
     )
 }

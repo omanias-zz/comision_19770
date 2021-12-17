@@ -192,3 +192,19 @@ const i = setInterval(()=>{
         - contador 
         - sass
         - ciclo de vida
+
+
+
+react-router
+
+react-router-dom
+
+
+    BrowserRouter : History API
+    HashRouter : location.hash
+    StaticRouter : SSR (Server Side Rendering)
+
+react-router-native
+
+
+Pub/Sub

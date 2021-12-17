@@ -1,18 +1,24 @@
-const Header = ({nombre,links}) => {
+import { Link, NavLink } from "react-router-dom"
+
+const Header = ({ nombre, links }) => {
 
     return (
         <header id="main-header" className="header">
             <div id="brand">
-                <img src="/logo192.png" alt="logo" />
-                <h1>{nombre}</h1>
+                <NavLink to="/">
+                    <img src="/logo192.png" alt="logo" />
+                    <h1>{nombre}</h1>
+                </NavLink>
             </div>
             <nav>
                 {links.map((elemento, indice) => {
-                    return <a key={elemento.id} href={elemento.href}>{elemento.name}</a>
+                    return <NavLink key={elemento.id} to={elemento.href}>{elemento.name}</NavLink>
                 })}
-                <span className="material-icons">
-                    shopping_cart
-                </span>
+                <NavLink to="/carrito">
+                    <span className="material-icons">
+                        shopping_cart
+                    </span>
+                </NavLink>
             </nav>
         </header>
     )

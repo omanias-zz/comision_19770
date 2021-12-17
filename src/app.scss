@@ -40,6 +40,11 @@
      height: 100vh;
  }
 
+ #root {
+     display: flex;
+     flex-direction: column;
+ }
+
  #main-header {
     background-color: $main-color;
     padding: 0.5rem 1rem;
@@ -51,6 +56,11 @@
     #brand {
         display: flex;
         align-items: center;
+         
+        > a { 
+            display: flex;
+            align-items: center;
+        }
 
         img {
             height: 60px;
@@ -69,4 +79,12 @@
 
  main {
      padding: 1rem;
+     flex-grow: 1;
+     padding: 1rem;
+ }
+
+ footer {
+     background-color: yellow;
+     padding: 0.5rem 0;
+     text-align: center;
  }
