@@ -10,6 +10,7 @@ const Home = () => {
 
     const [valor,setValor] = useState("")
     const [usuarios,setUsuarios] = useState([])
+    const [mostrar,setMostrar] = useState(true)
 
     const manejarBorrar = (id) => {
         //setUsuarios()
