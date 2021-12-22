@@ -4,9 +4,9 @@ import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 
 const productosIniciales = [
-    { nombre: "Camisa", precio: 50 },
-    { nombre: "Pantalon", precio: 100 },
-    { nombre: "Zapatos", precio: 150 }
+    { id : 1 , nombre: "Camisa", precio: 50 , img : "/logo192.png" },
+    { id : 2 , nombre: "Pantalon", precio: 100 , img : "/logo192.png" },
+    { id : 3 , nombre: "Zapatos", precio: 150 , img : "/logo192.png" }
 ]
 
 const ItemListContainer = ({ greeting }) => {

@@ -2,7 +2,7 @@ import Item from "./Item"
 
 const ItemList = ({lista}) => {
     return (
-        <div>
+        <div id="item-container">
             {lista.map((item,index)=>{
                 return <Item key={index} item={item}/>
             })}
