@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom"
+import { useContexto } from "./miContexto"
 
 const Header = ({ nombre, links }) => {
+
+    const { cantidad_total } = useContexto()
+    console.log(cantidad_total)
 
     return (
         <header id="main-header" className="header">
@@ -18,6 +22,7 @@ const Header = ({ nombre, links }) => {
                     <span className="material-icons">
                         shopping_cart
                     </span>
+                    {cantidad_total}
                 </NavLink>
             </nav>
         </header>

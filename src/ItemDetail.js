@@ -8,6 +8,7 @@ const ItemDetail = ({producto}) => {
         console.log("Soy onAdd desde ItemListContainer")
         console.log("Cantidad de items: " + cantidad)
         //setCantidad(cantidad)
+        //agregarAlCarrito(cantidad,producto)
     } 
     
         return (
