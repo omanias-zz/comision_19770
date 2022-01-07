@@ -208,3 +208,34 @@ react-router-native
 
 
 Pub/Sub
+
+
+
+
+CONTEXT : Es una forma de pasar informacion entre componentes sin necesidad de pasar props
+
+1 - Creas un contexto (createContext from "react")
+
+    const contexto = createContext()
+
+
+2 - Sacas el Provider del contexto que creaste en paso 1
+
+    const {Provider} = contexto
+
+
+3 - Podemos leer el contexto usando el hook useContext(contexto)
+
+    //AlgunComponente.js
+    const valorDelContexto = useContext(contexto)
+
+
+4 - Uso el Provider
+
+    <Provider value={?}>
+        <AlgunosComponentes />
+    </Provider>
+
+
+
+5 - 
