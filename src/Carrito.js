@@ -5,8 +5,11 @@ const Carrito = () => {
 
     const { carrito, borrarDelCarrito, limpiarCarrito } = useContexto()
 
-    //const t = condicion ? b : a
-    //const t = if(condicion){ } else { }
+    const finalizarCompra = () => {
+        console.log("Guardando la compra en la db...")
+        limpiarCarrito()
+    }
+
 
     return (
         <div>
@@ -14,36 +17,19 @@ const Carrito = () => {
             {carrito.length > 0 ? (
                 <ul>
                     {carrito.map((producto, indice) => {
-                        return <li key={indice}>{producto.nombre} - ${producto.precio}</li>
+                        return (
+                            <li key={indice}>
+                                {producto.nombre} - ${producto.precio}
+                                <button onClick={()=>borrarDelCarrito(producto.id,producto.cantidad)}>borrar</button>
+                            </li>
+                        )
                     })}
                 </ul>
             ) : <p>No hay productos en el carrito</p>}
 
-            <p className={carrito.length > 0 ? "rojo" : "negro"} >si tengo cosas en el carrito soy rojo, sino negro</p>
+            <button onClick={finalizarCompra}>finalizar compra</button>
         </div>
     )
-
-    /*  if (carrito.length > 0) {
-         return (
-             <div>
-                 Soy Carrito
-                 <ul>
-                     {carrito.map((producto, indice) => {
-                         return <li key={indice}>{producto.nombre} - ${producto.precio}</li>
-                     })}
-                 </ul>
-             </div>
-         )
- 
-     } else {
-         return (
-             <div>
-                 No hay productos en el carrito
-                 <Link to="/">ir a comprar</Link>
-             </div>
-         )
-     }
- } */
 }
 
 export default Carrito

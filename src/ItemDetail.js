@@ -3,14 +3,10 @@ import { useContexto } from "./miContexto"
 
 const ItemDetail = ({ producto }) => {
 
-    //const [mostrar,setMostrar] = useState(true)
     const { agregarAlCarrito } = useContexto()
 
 
     const onAdd = (cantidad) => {
-        console.log("Soy onAdd desde ItemListContainer")
-        console.log("Cantidad de items: " + cantidad)
-        //setCantidad(cantidad)
         agregarAlCarrito(cantidad,producto)
     }
 

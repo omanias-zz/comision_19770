@@ -2,7 +2,9 @@ import { useState, useEffect } from "react"
 import ItemCount from "./ItemCount"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
+import { db } from "./firebase"
 
+console.log(db)
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -25,6 +27,7 @@ const ItemListContainer = ({ greeting }) => {
             .then((productos) => {
                 setLista(productos)
             })
+
     }, [nombre])
 
     return (

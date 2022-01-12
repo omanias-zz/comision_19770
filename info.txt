@@ -239,3 +239,32 @@ CONTEXT : Es una forma de pasar informacion entre componentes sin necesidad de p
 
 
 5 - 
+
+
+
+FIREBASE
+
+
+- Proyecto : Es lo que te habilita a usar los servicios
+        - Base de datos (Firestore)
+        - Autenticacion (Firebase Auth)
+        - Storage (Firebase Storage)
+        - Realtime Database (Firebase Realtime Database)
+        - Lambda Function 
+        - Hosting (Firebase Hosting)
+
+- App : El acceso externo a los servicios del proyecto
+
+- NoSQL : Not only SQL (No Relacional)
+
+- Base de datos : Es el lugar en donde se almacena la informacion
+
+- Collection : La entidad en donde se almacena la informacion por separado
+
+- Documents : { id : "" }
+
+
+SDK 
+
+npm i firebase 
+

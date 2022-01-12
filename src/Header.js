@@ -4,7 +4,6 @@ import { useContexto } from "./miContexto"
 const Header = ({ nombre, links }) => {
 
     const { cantidad_total } = useContexto()
-    console.log(cantidad_total)
 
     return (
         <header id="main-header" className="header">
