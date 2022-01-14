@@ -268,3 +268,63 @@ SDK
 
 npm i firebase 
 
+
+
+BASES DE DATOS
+
+ABM - CRUD
+
+ULR / IP
+
+HTTP : 80
+HTTPS : 443
+
+SERVIDOR / PUERTO
+
+
+RELACIONALES / SQL  
+
+BASE DE DATOS
+ENTIDAD / TABLA
+REGISTROS
+
+
+
+
+
+
+NO RELACIONALES / NoSQL
+
+BASE DE DATOS
+COLLECTIONS (Namespace)
+DOCUMENTS (Registros)
+
+VELOCIDAD
+
+
+
+
+getDocs(productosCollection)
+                .then((resultado) => {
+                    //restultado : seria una representacion de lo que hay en la base de datos segun esta consulta
+                    const docs = resultado.docs
+                    //De resultado nos interesaba docs que era un array con la representacion de los documentos
+                    const lista = docs.map((doc) => {
+                        //Sacas el id por un lado
+                        const id = doc.id
+                        //Sacas el resto de la informacion por el otro
+                        const data = doc.data()
+                        //Integras todo en un mismo objeto
+                        const producto = {
+                            id: id,
+                            ...data
+                        }
+                        //El objeto integrado lo devolves asi se crea el array ya bien formateado
+                        return producto
+                    })
+                    //Usas el array formateado como estado
+                    setLista(lista)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })

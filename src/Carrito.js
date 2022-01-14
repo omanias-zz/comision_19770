@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 import { useContexto } from "./miContexto"
+import { addDoc, collection , serverTimestamp , updateDoc } from "firebase/firestore"
+import { db } from "./firebase"
 
 const Carrito = () => {
 
@@ -7,7 +9,22 @@ const Carrito = () => {
 
     const finalizarCompra = () => {
         console.log("Guardando la compra en la db...")
-        limpiarCarrito()
+
+        const ventasCollection = collection(db, "ventas")
+        addDoc(ventasCollection,{
+            buyer : {
+                name : "Juan",
+                lastName : "Perez",
+                email : "mail@mail"
+            },
+            items : carrito ,
+            date : serverTimestamp(),
+            total : 100
+        })
+        .then((resultado)=>{
+            console.log(resultado)
+            limpiarCarrito()
+        })
     }
 
 
@@ -20,7 +37,7 @@ const Carrito = () => {
                         return (
                             <li key={indice}>
                                 {producto.nombre} - ${producto.precio}
-                                <button onClick={()=>borrarDelCarrito(producto.id,producto.cantidad)}>borrar</button>
+                                <button onClick={() => borrarDelCarrito(producto.id, producto.cantidad)}>borrar</button>
                             </li>
                         )
                     })}

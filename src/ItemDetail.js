@@ -13,8 +13,9 @@ const ItemDetail = ({ producto }) => {
     return (
         <div>
             <h1>Detalle de producto</h1>
-            <p>Nombre: {/* producto.nombre */}</p>
-            <p>Precio: ${/* producto.precio */}</p>
+            <img src={producto.imagen}/>
+            <p>Nombre: {producto.title}</p>
+            <p>Precio: ${producto.precio}</p>
             <ItemCount stock={5} initial={1} onAdd={onAdd} />
         </div>
     )
