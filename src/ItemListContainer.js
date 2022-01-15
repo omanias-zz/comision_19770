@@ -11,14 +11,18 @@ const ItemListContainer = ({ greeting }) => {
     let [lista, setLista] = useState([])
     const { nombre } = useParams()
 
+    //const pedirProductos = () => {}
+
     useEffect(() => {
 
         const productosCollection = collection(db, "productos")
 
+        //pedirProductos()
+
         if (nombre) {
 
             const consulta = query(productosCollection,where("categoria","==",nombre),where("precio",">",100))
-            getDocs(consulta)
+            /* await */ getDocs(consulta)
                 .then(({ docs }) => {
                     setLista(docs.map((doc) => ({ id: doc.id, ...doc.data() })))
                 })
