@@ -132,7 +132,7 @@ foo.next(5)
 function App() {
 
     let [show, setShow] = useState(false)
-
+    //alert - prompt - confirm - eval
     const links = [
         { href: "/productos", name: "productos", id: 1 },
         { href: "/categoria/electronics", name: "electronics", id: 2 },

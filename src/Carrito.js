@@ -2,31 +2,14 @@ import { Link } from "react-router-dom"
 import { useContexto } from "./miContexto"
 import { addDoc, collection , serverTimestamp , updateDoc } from "firebase/firestore"
 import { db } from "./firebase"
+import Formulario from "./Formulario"
+//Process : Es una variable "global" de Node.js que nos permite acceder a informacion del proceso que estamos ejecutando
+
+console.log(process.env)
 
 const Carrito = () => {
 
     const { carrito, borrarDelCarrito, limpiarCarrito } = useContexto()
-
-    const finalizarCompra = () => {
-        console.log("Guardando la compra en la db...")
-
-        const ventasCollection = collection(db, "ventas")
-        addDoc(ventasCollection,{
-            buyer : {
-                name : "Juan",
-                lastName : "Perez",
-                email : "mail@mail"
-            },
-            items : carrito ,
-            date : serverTimestamp(),
-            total : 100
-        })
-        .then((resultado)=>{
-            console.log(resultado)
-            limpiarCarrito()
-        })
-    }
-
 
     return (
         <div>
@@ -43,7 +26,7 @@ const Carrito = () => {
                     })}
                 </ul>
             ) : <p>No hay productos en el carrito</p>}
-
+            {/* {carrito.length > 0 ? <Formulario/> : null} */}
             <button onClick={finalizarCompra}>finalizar compra</button>
         </div>
     )

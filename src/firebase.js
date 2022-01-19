@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC0M63_ZpejlOkHg1hgbFlzEl5Id5hmxD4",
+    apiKey: process.env.REACT_APP_apiKey,
     authDomain: "comision-19770.firebaseapp.com",
     projectId: "comision-19770",
     storageBucket: "comision-19770.appspot.com",
@@ -14,5 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 
 export const db = getFirestore(app)
+
+
 //1)obtener una referencia a la db
 //2)obtener una referencia a la coleccion

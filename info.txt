@@ -328,3 +328,20 @@ getDocs(productosCollection)
                 .catch((error) => {
                     console.log(error)
                 })
+
+
+
+VARIABLES DE ENTORNO / ENVIROMENT VARIABLES
+
+Node.JS
+
+.env
+
+nombre_variable=valor
+
+
+
+GIF / VIDEO 
+
+
+BUILD

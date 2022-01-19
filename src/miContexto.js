@@ -15,6 +15,8 @@ const CustomProvider = ({ children }) => {
     const [cantidad_total, setCantidadTotal] = useState(0)
     const [carrito, setCarrito] = useState([])
 
+    //const precio_total = carrtito.reduce(producto=>producto.precio,0)
+
     const agregarAlCarrito = (cantidad, producto) => {
         const id = producto.id
         if (isInCarrito(id)) {
